@@ -22,12 +22,14 @@ requirements:
     - pip
   run:
     - python
-    - anaconda-cli-base
-    - anaconda-cloud-auth
+    - anaconda-cli-base >=0.2
+    - anaconda-cloud-auth >=0.3
+    - anaconda-client >=1.12.2
 
 test:
   imports:
     - anaconda_cloud_cli
+    - binstar_client
   commands:
     - python -c "from anaconda_cloud_cli import __version__; assert __version__ == \"{{ version }}\""
     #- pip check # anaconda-anon-usage 0.4.3 requires conda, which is not installed.
